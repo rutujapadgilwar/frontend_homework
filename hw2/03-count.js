@@ -1,11 +1,11 @@
 // Add your code here
-let para = document.getElementById("paraInfo");
-let input_text = document.getElementById("userinput");
-input_text.addEventListener("input", (event) => {
+let paragraphInfo = document.getElementById("paraInfo");
+let inputText = document.getElementById("userinput");
+inputText.addEventListener("input", (event) => {
   const searchText = event.target.value;
   const regex = new RegExp(searchText, "g");
-  let text = para.innerHTML;
-  text = text.replace(/(<mark>|<\/mark>)/gim, ""); // remove previously highlighted words
+  let text = paragraphInfo.innerHTML;
+  text = text.replace(/(<mark>|<\/mark>)/gim, "");
   const newText = text.replace(regex, "<mark>$&</mark>");
-  para.innerHTML = newText;
+  paragraphInfo.innerHTML = newText;
 });
