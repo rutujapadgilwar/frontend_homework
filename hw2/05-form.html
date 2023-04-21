@@ -7,14 +7,108 @@
     <title>05 - Form</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <script defer src="05-form.js"></script>
   </head>
-  <body>
+  <body class="bg-dark p-5">
     <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
-      </form>
+      <div class="d-flex align-items-center justify-content-center">
+        <form class="d-inline-block p-4 bg-white h-60%" id="form1">
+          <h2 class="text-center">Exercise 05 FORM</h2>
+          <div class="form-group row">
+            <div class="col-form-label">
+              <label for="Username" class="fw-bold">Full Name:</label>
+              <input type="text" class="form-control" id="Username" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-form-label">
+              <label for="email" class="fw-bold">Email:</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-form-label">
+              <label for="registrationStatus" class="col-form-label fw-bold"
+                >Registration Status:</label
+              >
+              <select
+                class="form-select"
+                name="reg-status"
+                id="registrationStatus"
+              >
+                <option value="">Choose an option</option>
+                <option value="registered">Registered</option>
+                <option value="non-registered">Not Registered</option>
+                <option value="waitlist">Waitlist</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="form-elemnet form-checkboxes">
+            <legend class="col-form-label fw-bold">
+              Have you taken any of following courses?
+            </legend>
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="courseSelection"
+              id="programmingLanguage"
+            />
+            <label class="form-check-label" for="programmingLanguage"
+              >Programming Languages</label
+            >
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="courseSelection"
+              id="OperatingSystem"
+            />
+            <label class="form-check-label" for="OperatingSystem"
+              >Operating System</label
+            >
+            <br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="FullStack"
+              name="courseSelection"
+            />
+            <label class="form-check-label" for="FullStack"
+              >Full Stack Web Developement</label
+            >
+          </fieldset>
+          <div class="form-group row">
+            <label for="comment" class="col-form-label fw-bold"
+              >Anything else:</label
+            >
+            <br />
+            <textarea class="form-group" name="comment" id="comment">
+            </textarea>
+          </div>
+          <br />
+          <div>
+            <input
+              type="button"
+              class="btn btn-primary flex-fill"
+              id="Submit"
+              value="Submit"
+              style="width: 50%; float: left"
+              onclick="submitForm()"
+            />
+            <input
+              type="button"
+              class="btn btn-secondary flex-fill"
+              id="Reset"
+              value="Reset"
+              style="width: 50%; float: right"
+              onclick="resetForm()"
+            />
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
