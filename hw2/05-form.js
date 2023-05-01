@@ -5,11 +5,11 @@ function validateForm() {
   let fieldEmail = document.forms["form1"]["email"].value;
 
   let validBool = true;
-  if (fieldName === "" || fieldName.match(formatName)) {
+  if (fieldName.match(formatName)) {
     window.alert("Please enter a valid Name");
     validBool = false;
   }
-  if (fieldEmail === "" || !fieldEmail.match(formatEmail)) {
+  if (!fieldEmail.match(formatEmail)) {
     window.alert("Please enter a valid Email");
     validBool = false;
   }
