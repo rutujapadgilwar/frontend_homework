@@ -1,5 +1,5 @@
 let timeInterval = setInterval(function () {
-  let randomColor1 = Math.floor(Math.random() * 16777215).toString(10);
+  let randomColor1 = Math.floor(Math.random() * 255);
   document.body.style.backgroundColor = "#" + randomColor1;
 }, 3000);
 let btnSelector = document.querySelector(".btn");
@@ -15,7 +15,7 @@ function changeBackgroundColor(event) {
     btnValue.className = "btn btn-danger";
     input.disabled = true;
     timeInterval = setInterval(function () {
-      let randomColor = Math.floor(Math.random() * 16777215).toString(10);
+      let randomColor = Math.floor(Math.random() * 255);
       document.body.style.backgroundColor = "#" + randomColor;
     }, input.value * 1000);
   } else if (btnValue.value === "Stop") {
