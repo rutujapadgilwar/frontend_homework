@@ -1,0 +1,38 @@
+:root {
+  --black: #020202;
+  --white: #ffffff;
+  --blue: #00425c;
+  --cyan: #17a2b8;
+  --teal: #006060;
+}
+
+body {
+  background-color: var(--cyan);
+}
+
+h1 {
+  text-align: center;
+}
+
+.donut-chart {
+  border-radius: 0.8rem;
+  background-color: var(--white);
+}
+
+body {
+  background-color: var(--cyan);
+}
+
+h1 {
+  text-align: center;
+}
+
+.characters {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.character-container:hover{
+  background-color: var(--blue);
+}
