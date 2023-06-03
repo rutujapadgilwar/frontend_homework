@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Search = () => {
+const Search = ({characters}) => {
   const [charName, setCharName] = useState([]);
   const [imgList, setImgList] = useState([]);
   const [result, setResult] = useState(false);
@@ -26,23 +26,15 @@ const Search = () => {
   };
 
   useEffect(() => {
-    let url = "https://thronesapi.com/api/v2/Characters";
-    fetch(url)
-      .then((response) => response.json())
-      .then((result) => {
-        const arr1 = [];
-        const arr2 = [];
-        result.forEach((element) => {
-          arr1.push(element.fullName);
-          arr2.push(element.imageUrl);
-        });
-        setCharName(arr1);
-        setImgList(arr2);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    const arr1 = [];
+    const arr2 = [];
+    characters.forEach((element) => {
+      arr1.push(element.fullName);
+      arr2.push(element.imageUrl);
+    });
+    setCharName(arr1);
+    setImgList(arr2);
+  }, [characters]);
 
   return (
     <div className="container w-75 mx-auto">
@@ -70,7 +62,7 @@ const Search = () => {
 
         {result ? (
           <figure>
-            <img src={imgList[valueIndex]} alt-text="GOT Character" />
+            <img src={imgList[valueIndex]} alt={charName} />
             <figcaption className="figure-caption">
               {charName[valueIndex]}
             </figcaption>

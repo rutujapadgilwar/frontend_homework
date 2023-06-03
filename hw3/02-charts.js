@@ -27,7 +27,6 @@ const backgroundColors = [
   'rgba(128, 0, 128, 0.8)',   // purple
   'rgba(70, 130, 90, 0.8)',   // seaGreen
 ];
-
 const borderColors = [
   'rgba(54, 162, 235, 1)',
   'rgba(255, 206, 86, 1)',
@@ -69,6 +68,7 @@ async function fetchData() {
       family: item.family.split(",")[0],
       
     }));
+    console.log(familyData);
     const familyCount = familyData.reduce((counts, family) => {
       let familyName = family.family;
       if (!familyName || typeof familyName !== "string") {
@@ -120,5 +120,4 @@ const renderChart = (familyCountsArray) => {
     },
   });
 };
-
 renderChart();

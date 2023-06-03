@@ -3,17 +3,13 @@ import axios from "axios";
 import Chart from "chart.js/auto";
 import { Doughnut } from "react-chartjs-2";
 
-// url for the Thrones API
-const URL = "https://thronesapi.com/api/v2/Characters";
-const Houses = () => {
+const Houses = ({characters}) => {
   const [familyCounts, setFamilyCounts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(URL);
-        const data = response.data;
-        const familyData = data.map((item) => ({
+        const familyData = characters.map((item) => ({
           name: item.fullName,
           family: item.family.split(",")[0],
         }));
@@ -132,7 +128,7 @@ const Houses = () => {
   return (
     <div>
       <h1>Houses of Characters</h1>
-      <div style={{ width: "45%" }}>
+      <div className="donutChart">
         <Doughnut data={chartData} />
       </div>
     </div>
